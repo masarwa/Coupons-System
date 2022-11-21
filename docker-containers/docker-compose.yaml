@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:8
+    ports:
+      - 33061:3306
+
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      -  /Users/aiser.masarwa/private/projects/CouponSystem/src/main/resources/aiser_coupons_management_2.sql:/opt/backup.sql
+    
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_PASSWORD=pass
+      - MYSQL_USER=aiser
+      - MYSQL_DATABASE=aiser_coupons_management
+
